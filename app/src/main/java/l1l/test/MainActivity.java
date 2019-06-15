@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView logTextView = findViewById(R.id.logTextView);
                 TextView countTextView = findViewById(R.id.countTextView);
 
-                EditText die12EditText = findViewById(R.id.die10EditText);
+                EditText die12EditText = findViewById(R.id.die12EditText);
 
                 logTextView.setMovementMethod(new ScrollingMovementMethod());
 
@@ -321,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView logTextView = findViewById(R.id.logTextView);
                 TextView countTextView = findViewById(R.id.countTextView);
 
-                EditText die20EditText = findViewById(R.id.die10EditText);
+                EditText die20EditText = findViewById(R.id.die20EditText);
 
                 logTextView.setMovementMethod(new ScrollingMovementMethod());
 
@@ -360,7 +360,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView logTextView = findViewById(R.id.logTextView);
                 TextView countTextView = findViewById(R.id.countTextView);
 
-                EditText die100EditText = findViewById(R.id.die10EditText);
+                EditText die100EditText = findViewById(R.id.die100EditText);
 
                 logTextView.setMovementMethod(new ScrollingMovementMethod());
 
