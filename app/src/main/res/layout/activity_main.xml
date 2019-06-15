@@ -4,28 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="hideKeyboard"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/die4"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:text="D4"
-        app:layout_constraintTop_toBottomOf="@+id/logTextView"
-        tools:layout_editor_absoluteX="71dp" />
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/die6"
+        app:layout_constraintTop_toBottomOf="@+id/logTextView" />
 
     <EditText
         android:id="@+id/die4EditText"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="number"
         android:singleLine="true"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/die4"
-        tools:layout_editor_absoluteX="71dp" />
+        android:textColorHighlight="#009688"
+        android:textColorLink="#009688"
+        app:layout_constraintEnd_toStartOf="@+id/die6EditText"
+        app:layout_constraintTop_toBottomOf="@+id/die4" />
 
     <TextView
         android:id="@+id/resultTextView"
@@ -45,7 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="8dp"
         android:editable="false"
         android:lines="3"
@@ -53,6 +58,7 @@
         android:scrollbars="vertical"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
 
@@ -87,58 +93,179 @@
         android:id="@+id/die3"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:text="D3"
-        app:layout_constraintTop_toBottomOf="@+id/logTextView"
-        tools:layout_editor_absoluteX="8dp" />
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/die4"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logTextView" />
 
     <EditText
         android:id="@+id/die3EditText"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="number"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/die3"
-        tools:layout_editor_absoluteX="8dp" />
+        android:textColorHighlight="#009688"
+        android:textColorLink="#009688"
+        app:layout_constraintEnd_toStartOf="@+id/die4EditText"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/die3" />
 
     <Button
         android:id="@+id/die6"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
         android:text="D6"
-        app:layout_constraintTop_toBottomOf="@+id/logTextView"
-        tools:layout_editor_absoluteX="133dp" />
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/die8"
+        app:layout_constraintTop_toBottomOf="@+id/logTextView" />
 
     <EditText
         android:id="@+id/die6EditText"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@+id/die6"
-        tools:layout_editor_absoluteX="133dp" />
+        android:textAlignment="center"
+        android:textColorHighlight="#009688"
+        android:textColorLink="#009688"
+        app:layout_constraintEnd_toStartOf="@+id/die8EditText"
+        app:layout_constraintTop_toBottomOf="@+id/die6" />
 
     <Button
         android:id="@+id/die8"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="100dp"
         android:text="D8"
-        app:layout_constraintTop_toBottomOf="@+id/logTextView"
-        tools:layout_editor_absoluteX="193dp" />
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logTextView" />
 
     <EditText
         android:id="@+id/die8EditText"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="100dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@+id/die8"
-        tools:layout_editor_absoluteX="193dp" />
+        android:textAlignment="center"
+        android:textColorHighlight="#009688"
+        android:textColorLink="#009688"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/die8" />
+
+    <Button
+        android:id="@+id/die10"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="D10"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/die12"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/die3EditText" />
+
+    <Button
+        android:id="@+id/die12"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="D12"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/die20"
+        app:layout_constraintTop_toBottomOf="@+id/die4EditText" />
+
+    <Button
+        android:id="@+id/die20"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="D20"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/die100"
+        app:layout_constraintTop_toBottomOf="@+id/die6EditText" />
+
+    <Button
+        android:id="@+id/die100"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="100dp"
+        android:text="D100"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/die8EditText" />
+
+    <EditText
+        android:id="@+id/die10EditText"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/die12EditText"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/die10" />
+
+    <EditText
+        android:id="@+id/die12EditText"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/die20EditText"
+        app:layout_constraintTop_toBottomOf="@+id/die12" />
+
+    <EditText
+        android:id="@+id/die20EditText"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/die100EditText"
+        app:layout_constraintTop_toBottomOf="@+id/die20" />
+
+    <EditText
+        android:id="@+id/die100EditText"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/die100" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02872777" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

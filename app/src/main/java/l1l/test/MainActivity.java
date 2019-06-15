@@ -1,8 +1,10 @@
 package l1l.test;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,12 +14,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import l1l.test.models.Die10;
+import l1l.test.models.Die100;
+import l1l.test.models.Die12;
+import l1l.test.models.Die20;
 import l1l.test.models.Die3;
 import l1l.test.models.Die4;
 import l1l.test.models.Die6;
 import l1l.test.models.Die8;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         Button d4Button = findViewById(R.id.die4);
         Button d6Button = findViewById(R.id.die6);
         Button d8Button = findViewById(R.id.die8);
+        Button d10Button = findViewById(R.id.die10);
+        Button d12Button = findViewById(R.id.die12);
+        Button d20Button = findViewById(R.id.die20);
+        Button d100Button = findViewById(R.id.die100);
 
 
         Button clearButton = findViewById(R.id.clearButton);
@@ -44,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
                 EditText die4EditText = findViewById(R.id.die4EditText);
                 EditText die6EditText = findViewById(R.id.die6EditText);
                 EditText die8EditText = findViewById(R.id.die8EditText);
+                EditText die10EditText = findViewById(R.id.die10EditText);
+                EditText die12EditText = findViewById(R.id.die12EditText);
+                EditText die20EditText = findViewById(R.id.die20EditText);
+                EditText die100EditText = findViewById(R.id.die100EditText);
 
                 resultTextView.setText("");
                 logTextView.setText("");
@@ -53,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 die4EditText.setText("");
                 die6EditText.setText("");
                 die8EditText.setText("");
+                die10EditText.setText("");
+                die12EditText.setText("");
+                die20EditText.setText("");
+                die100EditText.setText("");
 
             }
         });
@@ -213,5 +233,166 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // D10
+        d10Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Die10 d10 = Die10.getInstance();
+
+                TextView resultTextView = findViewById(R.id.resultTextView);
+                TextView logTextView = findViewById(R.id.logTextView);
+                TextView countTextView = findViewById(R.id.countTextView);
+
+                EditText die10EditText = findViewById(R.id.die10EditText);
+
+                logTextView.setMovementMethod(new ScrollingMovementMethod());
+
+                int result = 0;
+
+                if(!(die10EditText.getText().length() > 0)) {
+                    result = d10.roll();
+
+                    resultTextView.setText(result + "");
+                    logTextView.append(result + " ");
+                    countTextView.setText(1 + "D" + 10);
+                } else {
+                    List<Integer> results = new ArrayList<>();
+                    int repetitions = Integer.parseInt(die10EditText.getText().toString());
+                    for(int i = 1; i <= repetitions; i++) {
+                        results.add(d10.roll());
+                    }
+                    for(int result_ : results) {
+                        result += result_;
+                    }
+                    resultTextView.setText(result + "");
+                    logTextView.append(results + " ");
+                    countTextView.setText(repetitions + "D" + 10);
+                }
+
+            }
+        });
+
+        // D12
+        d12Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Die12 d12 = Die12.getInstance();
+
+                TextView resultTextView = findViewById(R.id.resultTextView);
+                TextView logTextView = findViewById(R.id.logTextView);
+                TextView countTextView = findViewById(R.id.countTextView);
+
+                EditText die12EditText = findViewById(R.id.die10EditText);
+
+                logTextView.setMovementMethod(new ScrollingMovementMethod());
+
+                int result = 0;
+
+                if(!(die12EditText.getText().length() > 0)) {
+                    result = d12.roll();
+
+                    resultTextView.setText(result + "");
+                    logTextView.append(result + " ");
+                    countTextView.setText(1 + "D" + 12);
+                } else {
+                    List<Integer> results = new ArrayList<>();
+                    int repetitions = Integer.parseInt(die12EditText.getText().toString());
+                    for(int i = 1; i <= repetitions; i++) {
+                        results.add(d12.roll());
+                    }
+                    for(int result_ : results) {
+                        result += result_;
+                    }
+                    resultTextView.setText(result + "");
+                    logTextView.append(results + " ");
+                    countTextView.setText(repetitions + "D" + 12);
+                }
+
+            }
+        });
+
+        // D20
+        d20Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Die20 d20 = Die20.getInstance();
+
+                TextView resultTextView = findViewById(R.id.resultTextView);
+                TextView logTextView = findViewById(R.id.logTextView);
+                TextView countTextView = findViewById(R.id.countTextView);
+
+                EditText die20EditText = findViewById(R.id.die10EditText);
+
+                logTextView.setMovementMethod(new ScrollingMovementMethod());
+
+                int result = 0;
+
+                if(!(die20EditText.getText().length() > 0)) {
+                    result = d20.roll();
+
+                    resultTextView.setText(result + "");
+                    logTextView.append(result + " ");
+                    countTextView.setText(1 + "D" + 20);
+                } else {
+                    List<Integer> results = new ArrayList<>();
+                    int repetitions = Integer.parseInt(die20EditText.getText().toString());
+                    for(int i = 1; i <= repetitions; i++) {
+                        results.add(d20.roll());
+                    }
+                    for(int result_ : results) {
+                        result += result_;
+                    }
+                    resultTextView.setText(result + "");
+                    logTextView.append(results + " ");
+                    countTextView.setText(repetitions + "D" + 20);
+                }
+
+            }
+        });
+
+        // D100
+        d100Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Die100 d100 = Die100.getInstance();
+
+                TextView resultTextView = findViewById(R.id.resultTextView);
+                TextView logTextView = findViewById(R.id.logTextView);
+                TextView countTextView = findViewById(R.id.countTextView);
+
+                EditText die100EditText = findViewById(R.id.die10EditText);
+
+                logTextView.setMovementMethod(new ScrollingMovementMethod());
+
+                int result = 0;
+
+                if(!(die100EditText.getText().length() > 0)) {
+                    result = d100.roll();
+
+                    resultTextView.setText(result + "");
+                    logTextView.append(result + " ");
+                    countTextView.setText(1 + "D" + 100);
+                } else {
+                    List<Integer> results = new ArrayList<>();
+                    int repetitions = Integer.parseInt(die100EditText.getText().toString());
+                    for(int i = 1; i <= repetitions; i++) {
+                        results.add(d100.roll());
+                    }
+                    for(int result_ : results) {
+                        result += result_;
+                    }
+                    resultTextView.setText(result + "");
+                    logTextView.append(results + " ");
+                    countTextView.setText(repetitions + "D" + 100);
+                }
+
+            }
+        });
+
+    }
+
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }
