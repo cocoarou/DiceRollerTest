@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         Button d20Button = findViewById(R.id.die20);
         Button d100Button = findViewById(R.id.die100);
 
-
         Button clearButton = findViewById(R.id.clearButton);
 
         // Clear Button
