@@ -125,13 +125,13 @@ public class MainActivity extends AppCompatActivity {
                 TextView logTextView = findViewById(R.id.logTextView);
                 TextView countTextView = findViewById(R.id.countTextView);
 
-                EditText die6EditText = findViewById(R.id.die6EditText);
+                EditText die4EditText = findViewById(R.id.die4EditText);
 
                 logTextView.setMovementMethod(new ScrollingMovementMethod());
 
                 int result = 0;
 
-                if(!(die6EditText.getText().length() > 0)) {
+                if(!(die4EditText.getText().length() > 0)) {
                     result = d4.roll();
 
                     resultTextView.setText(result + "");
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     countTextView.setText(1 + "D" + 4);
                 } else {
                     List<Integer> results = new ArrayList<>();
-                    int repetitions = Integer.parseInt(die6EditText.getText().toString());
+                    int repetitions = Integer.parseInt(die4EditText.getText().toString());
                     for(int i = 1; i <= repetitions; i++) {
                         results.add(d4.roll());
                     }
